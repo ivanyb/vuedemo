@@ -2,15 +2,15 @@
 	<div>
 		<head1 :headdata="headdata"></head1>
 
-		<p>
-			<!-- use router-link component for navigation. -->
-			<!-- specify the link by passing the `to` prop. -->
-			<!-- <router-link> will be rendered as an `<a>` tag by default -->
-			<router-link to="/newlz">新增连载</router-link>
-			<router-link to="/newend">新增完结</router-link>
-			<router-link to="/pushlz">推送连载</router-link>
-			<router-link to="/pushend">推送完结</router-link>
-		</p>
+		<div style="padding: 10px 10px;">
+			<div id="segmentedControl" class="mui-segmented-control">
+			
+			<router-link class="mui-control-item "  to="/newlz">新增连载</router-link>
+			<router-link class="mui-control-item "  to="/newend">新增完结</router-link>
+			<router-link class="mui-control-item "  to="/pushlz">推送连载</router-link>
+			<router-link class="mui-control-item "  to="/pushend">推送完结</router-link>
+			</div>
+		</div>
 		<!-- route outlet -->
 		<router-view> </router-view>
 		<hr />
@@ -25,7 +25,7 @@
 		name: 'apphead',
 		data() {
 			return {
-				msg: '这是入口',
+				msg: '',
 				headdata: {}
 			}
 		},
@@ -53,4 +53,9 @@
 
 <style>
 
+.mui-segmented-control .mui-control-item.router-link-active
+{
+	color:#fff;
+	background-color:#007aff;
+}
 </style>

@@ -10,7 +10,7 @@ var vueResource = require('vue-resource');
 // //1.0 在Vue中使用VueRouter对象
 Vue.use(VueRouter);
 Vue.use(vueResource);
-
+ 
 //2.0 加载4个导航组件
 import newlz from 'comp/newlz/newlz'
 import newend from 'comp/newend/newend'
@@ -22,6 +22,7 @@ const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 
 const router = new VueRouter({
+	//linkActiveClass:'mui-active', //可以修改router-link-active 为mui-active来解决tab栏的选中bug
     routes: [
         { path: '/newlz', component: newlz },
         { path: '/newend', component: newend }
